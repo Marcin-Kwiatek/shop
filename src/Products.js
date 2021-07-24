@@ -7,21 +7,24 @@ class Products extends Component {
     super(props)
     this.productPurchase = this.productPurchase.bind(this)
     this.addingToBag = this.addingToBag.bind(this)
+    this.onChangeAmountOfProducts = this.onChangeAmountOfProducts .bind(this)
 }
   state={
-    display:"none",
-    inputValue:''
+    visibiltyAddToBag:false,
+    inputValue:'',
+    amountOfProducts:1
   }
   render(){
   return (
     <>
-    <div style={{display:this.state.display}} className="amountOfProducts">
-        <input className="amountOfProductsInput" type="number" max="10" min="1" placeholder="enter the number of products"></input>
+    {this.state.visibiltyAddToBag &&
+    <div className="amountOfProducts">
+        <input className="amountOfProductsInput" onChange={this.onChangeAmountOfProducts} value={this.state.amountOfProducts} type="number" max="10" min="1" placeholder="enter the number of products"></input>
         <button onClick={this.addingToBag} className="addToBagButton">ADD TO BAG</button>
-      </div>
+      </div>}
     <div className="allProducts">
       <div className="product">
-      <div className="productImg"><img src={require("./img/product-1.jpg").default} onClick={this.productPurchase} ></img></div>
+      <div className="productImg"><img src={require("./img/product-1.jpg").default} onClick={()=>this.productPurchase("T-shirt Puma Red")} ></img></div>
       <div className="productName">T-shirt Puma Red </div>
       <div className="price">99zł</div>
       </div>
@@ -84,11 +87,14 @@ class Products extends Component {
     </>
   )} 
   productPurchase(event){
-    this.setState({display:"inline"})
+    this.setState({visibiltyAddToBag:true})
     console.log(event)
   }
   addingToBag(){
-    this.setState({display:"none"})
+    this.setState({visibiltyAddToBag:false})
+  }
+  onChangeAmountOfProducts(event){
+    this.setState({amountOfProducts:event.target.value})
   }
 }
 
