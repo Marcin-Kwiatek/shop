@@ -1,5 +1,6 @@
 import './Products.css';
 import React, {Component} from 'react';
+import OneProduct from './OneProduct';
 
 
 class Products extends Component {
@@ -12,7 +13,21 @@ class Products extends Component {
   state={
     visibiltyAddToBag:false,
     inputValue:'',
-    amountOfProducts:1
+    amountOfProducts:1,
+    products:[
+      {img:1,name:"T-shirt Puma Red",price:"99zł"},
+      {img:2,name:"Shoes HRX Black",price:"199zł"},
+      {img:3,name:"Pants Gray ",price:"129zł"},
+      {img:4,name:"T-shirt Puma Blue",price:"109zł"},
+      {img:5,name:"Shoes Gray",price:"169zł"},
+      {img:6,name:"T-shirt Puma Black",price:"99zł"},
+      {img:7,name:"Socks HRX 3 Pairs",price:"69zł"},
+      {img:8,name:"Watch Fossil Black",price:"499zł"},
+      {img:9,name:"Watch Roadster Black",price:"599zł"},
+      {img:10,name:"Shoes X Black ",price:"219zł"},
+      {img:11,name:"Shoes Roadster Gray",price:"159zł"},
+      {img:12,name:"Pants Nike Black",price:"149zł"},
+    ]
   }
   render(){
   return (
@@ -22,67 +37,9 @@ class Products extends Component {
         <input className="amountOfProductsInput" onChange={this.onChangeAmountOfProducts} value={this.state.amountOfProducts} type="number" max="10" min="1" placeholder="enter the number of products"></input>
         <button onClick={this.addingToBag} className="addToBagButton">ADD TO BAG</button>
       </div>}
-    <div className="allProducts">
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-1.jpg").default} onClick={()=>this.productPurchase("T-shirt Puma Red")} ></img></div>
-      <div className="productName">T-shirt Puma Red </div>
-      <div className="price">99zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-2.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Shoes HRX Black </div>
-      <div className="price">199zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-3.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Pants Gray </div>
-      <div className="price">129zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-4.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">T-shirt Puma Blue </div>
-      <div className="price">109zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-5.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Shoes Gray </div>
-      <div className="price">169zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-6.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">T-shirt Puma Black</div>
-      <div className="price">99zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-7.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Socks HRX 3 Pairs</div>
-      <div className="price">69zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-8.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Watch Fossil Black</div>
-      <div className="price">499zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-9.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Watch Roadster Black</div>
-      <div className="price">599zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-10.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Shoes X Black </div>
-      <div className="price">219zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-11.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Shoes Roadster Gray</div>
-      <div className="price">159zł</div>
-      </div>
-      <div className="product">
-      <div className="productImg"><img src={require("./img/product-12.jpg").default} onClick={this.productPurchase} ></img></div>
-      <div className="productName">Pants Nike Black</div>
-      <div className="price">149zł</div>
-      </div>
+      <div className="allProducts">
+        {this.state.products.map((product) => <OneProduct img={product.img} name={product.name} price={product.price}
+         id={product.id} ></OneProduct>)}     
     </div>
     </>
   )} 
