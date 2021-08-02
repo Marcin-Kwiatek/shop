@@ -6,6 +6,7 @@
 
 .product {
     text-align: center;
+    background-color: black;
 }
 
 .productImg {
@@ -44,26 +45,75 @@
 
 .amountOfProducts {
     position: absolute;
-    background-color: #2a2a2a;
+    background-color: #1a1a1a;
     width: 50%;
-    top: 50%;
-    left: 25%;
+    right: 0%;
     z-index: 10;
     border: 5px solid #1a1a1a;
+    padding: 20px;
+}
+
+.amountOfProducts img {
+    max-width: 60%;
+}
+
+.productDescription {
+    width: 30%;
+    float: right;
+    padding: 20px;
 }
 
 .amountOfProductsInput {
-    width: 40%;
+    width: 20%;
+    margin: 20px;
+    height: 45px;
+    float: left;
+}
+
+.sizeInput {
+    width: 20%;
     margin: 20px;
     height: 50px;
+    float: left;
 }
 
 .addToBagButton {
     width: 40%;
     margin: 20px;
     height: 50px;
+    float: left;
 }
 
 .addToBagButton:hover {
     background-color: #fe7f00;
+}
+
+.OrderingButton {
+    background-color: #fff;
+    width: 40%;
+    min-height: 80px;
+    font-size: 50px;
+    margin: 100px 0;
+    position: relative;
+    left: 30%;
+}
+
+.OrderingButton:hover {
+    background-color: #fe7f00;
+}
+
+@media only screen and (max-width:768px) {
+    .OrderingButton {
+        font-size: 32px;
+        margin: 30px 0;
+    }
+    .amountOfProducts img {
+        max-width: 80%;
+        margin-left: 10%;
+    }
+    .productDescription {
+        width: 80%;
+        text-align: center;
+        padding: 20px;
+    }
 }

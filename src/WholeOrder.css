@@ -1,0 +1,32 @@
+.button {
+    background-color: #fff;
+    width: 40%;
+    min-height: 80px;
+    font-size: 50px;
+    margin: 50px;
+}
+
+.button:hover {
+    background-color: #fe7f00;
+}
+
+.title {
+    font-size: 50px;
+    margin: 50px;
+}
+
+.total {
+    font-size: 36px;
+    text-align: center;
+    margin: 50px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+    .button {
+        font-size: 32px;
+        margin: 10px 50px;
+        width: 80%;
+    }
+}

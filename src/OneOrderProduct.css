@@ -1,0 +1,33 @@
+.orderProduct {
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    background-color: #fff;
+    color: black;
+}
+
+.orderProductImg {
+    width: 10%;
+    height: 100%;
+}
+
+.orderProductImg img {
+    width: 90%;
+    height: 90%;
+}
+
+.productInformation {
+    display: flex;
+    flex-direction: column;
+}
+
+.informationAboutProduct {
+    font-size: 36px;
+    float: left;
+    margin: 0 30px;
+}
+
+.orderProductName {
+    height: 50%;
+    font-size: 60px;
+}

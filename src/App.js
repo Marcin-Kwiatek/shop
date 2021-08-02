@@ -2,18 +2,28 @@ import './App.css';
 import React, {Component} from 'react';
 import Logo from './Logo';
 import Products from './Products';
+import WholeOrder from './WholeOrder';
 import Footer from './Footer'
-import OrderingButton from './OrderingButton'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 class App extends Component {
   render(){
   return (
-    <>
-      <Logo></Logo>
-      <Products></Products>
-      <OrderingButton></OrderingButton>
-      <Footer></Footer>
-      </>
+    <Router>
+      <Switch>
+      <Route exact path="/">
+        <Logo></Logo>
+        <Products></Products>
+        <Footer></Footer>
+      </Route>
+      <Route path="/WholeOrder" component={WholeOrder}>
+      </Route>
+      </Switch>
+    </Router>
   )}
 }
 
