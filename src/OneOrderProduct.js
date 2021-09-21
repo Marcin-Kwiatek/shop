@@ -9,11 +9,11 @@ class OneOrderProduct extends Component {
       <div className="orderProductImg">
       <img src={require("./img/product-"+this.props.img+".jpg").default}></img>
       </div>
-        <div productInformation>
+        <div className='productInformation'>
         <div className="orderProductName">{this.props.name}</div>
         <div className="informationAboutProduct">SIZE:{this.props.size}</div>
         <div className="informationAboutProduct">x{this.props.amountOfProducts}</div>
-        <div className="informationAboutProduct">{this.props.price}$</div>
+        <div className="informationAboutProduct" style={{color:'#fe7f00'}}>{this.props.price}$</div>
       </div>
     </div>
     </>

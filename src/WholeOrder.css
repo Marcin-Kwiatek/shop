@@ -16,9 +16,11 @@
 }
 
 .total {
+    background-color: #fff;
+    color: black;
     font-size: 36px;
     text-align: center;
-    margin: 50px;
+    margin: 50px 10px;
     letter-spacing: 4px;
     font-weight: bold;
 }

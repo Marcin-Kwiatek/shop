@@ -4,6 +4,7 @@
     display: flex;
     background-color: #fff;
     color: black;
+    text-align: center;
 }
 
 .orderProductImg {
@@ -12,13 +13,8 @@
 }
 
 .orderProductImg img {
-    width: 90%;
-    height: 90%;
-}
-
-.productInformation {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .informationAboutProduct {
@@ -30,4 +26,19 @@
 .orderProductName {
     height: 50%;
     font-size: 60px;
+}
+
+@media only screen and (max-width:768px) {
+    .orderProductImg {
+        width: 80%;
+    }
+    .orderProductName {
+        height: 40%;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .productInformation {
+        display: flex;
+        flex-direction: column;
+    }
 }

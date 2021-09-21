@@ -11,12 +11,11 @@ class WholeOrder extends Component {
     wholeOrder:this.props.location.state.wholeOrder
   }
   render(){
-    const {wholeOrder} = this.props.location.state
   return (
     <>
       <div className="title">Shopping bag</div>
       <div className="allOrderProducts">
-        {wholeOrder.map((product) => <OneOrderProduct key={product.id} img={product.img} name={product.name} price={product.price}
+        {this.state.wholeOrder.map((product) => <OneOrderProduct key={product.id} img={product.img} name={product.name} price={product.price}
         id={product.id} productPurchase={this.productPurchase} size={product.size} amountOfProducts={product.amountOfProducts}></OneOrderProduct>)}     
       </div>
       <div className='total'>TOTAL:{this.state.total}$ </div>
